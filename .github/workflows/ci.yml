@@ -16,4 +16,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Echo Info
         run: echo "${{ github.event.action }}"
+      - name: Write a comment
+        uses: actions/github@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: comment "commit SHA: ${{ github.event.head.sha }}"
 
