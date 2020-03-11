@@ -1,0 +1,14 @@
+name: Testing
+on:
+  - pull_request
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Echo Info
+        run: echo "${{ github.event.action }}"
+
