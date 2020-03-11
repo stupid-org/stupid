@@ -17,8 +17,8 @@ jobs:
       - name: Echo Info
         run: echo "${{ github.event.action }}"
       - name: Write a comment
-        uses: actions/github@v1
+        uses: actions/github@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: comment "commit SHA: ${{ github.event.pull_request.head.sha }}"
+          args: comment "commit SHA => ${{ github.event.pull_request.head.sha }}"
